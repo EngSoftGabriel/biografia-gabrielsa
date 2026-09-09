@@ -13,29 +13,53 @@
         <ul class="menu">
             <li><a href="#home">Início</a></li>
             <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
 
     <main class="conteudo-principal">
-        <div class="primeiro-container">
-            <h1>Bem vindos a minha página</h1>
-            <p>Este é um exemplo de página HTML com arquivos CSS e JavaScript vinculados.</p>
-        </div>
-        
-        <div class="segundo-container">
-            <h2>Sobre mim</h2>
-            <p>Meu nome é Gabriel e sou um desenvolvedor web apaixonado por criar experiências digitais incríveis.</p>
-        </div>
+        <section id="home" class="primeiro-container reveal">
+            <h1>Olá, eu sou Gabriel</h1>
+            <p>Sou desenvolvedor de software e apaixonado por transformar ideias em soluções digitais que fazem diferença.
+                Combinando tecnologia, criatividade e pensamento analítico, busco criar experiências que sejam úteis,
+                funcionais e impactantes.</p>
+        </section>
 
-        <div class="terceiro-container">
+        <section id="about" class="segundo-container reveal">
+            <h2>Sobre mim</h2>
+            <p>Bacharel em Engenharia de Software e pós-graduando em Ciência de Dados, tenho experiência em
+                desenvolvimento freelancer, estágio e projetos voluntários, com foco em JavaScript, Python e SQL.
+                Minha trajetória me permite unir engenharia de software, análise de dados e resolução de problemas em
+                soluções escaláveis, inteligentes e orientadas a resultados.</p>
+            <p>Além da tecnologia, gosto de enfrentar desafios que conectem desenvolvimento, dados e inovação, sempre
+                buscando aprender, evoluir e entregar valor real por meio do código.</p>
+        </section>
+
+        <section id="projects" class="terceiro-container reveal">
+            <h2>Projetos</h2>
+            <p>Aqui estão alguns dos meus projetos recentes:</p>
+            <ul>
+                <li><a href="https://github.com/EngSoftGabriel" target="_blank">Clique aqui para acessar meu GitHub</a></li>
+            </ul>
+
+            <div class="project-gallery">
+                <img src="./assets/img/controle-encomendas.png" alt="Controle de Encomendas" class="project-image">
+                <img src="./assets/img/finansu.png" alt="Finansu" class="project-image">
+            </div>
+        </section>
+
+        <section id="contact" class="quarto-container reveal">
             <h2>Contato</h2>
-            <p>Você pode entrar em contato comigo através do e-mail: gabrielsa.tech@gmail.com</p>
-        </div>
+            <p>Se você quiser conversar sobre tecnologia, projetos, colaborações ou oportunidades, estou aberto ao
+                diálogo.</p>
+            <p><strong>gabrielsa.tech@gmail.com</strong></p>
+            <button type="button" id="copy-email" class="copy-email">Copiar e-mail</button>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Gabriel. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> Gabriel. Todos os direitos reservados.</p>
     </footer>
 
     <script src="./js/script.js"></script>
