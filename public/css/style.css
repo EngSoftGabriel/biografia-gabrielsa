@@ -38,8 +38,19 @@ nav .menu a {
 }
 
 nav .menu a.active {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.35);
     font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+nav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+nav .menu a:active {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .conteudo-principal {
@@ -69,6 +80,17 @@ nav .menu a.active {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.primeiro-container h1,
+.segundo-container h2,
+.terceiro-container h2,
+.quarto-container h2 {
+    margin-bottom: 0px;
+}   
+
+.quarto-container {
+    margin-bottom: 25px;
+}
+
 .project-gallery {
     display: flex;
     justify-content: center;
@@ -76,11 +98,11 @@ nav .menu a.active {
     gap: 20px;
     width: 100%;
     margin-top: 20px;
-    flex-wrap: wrap;
+    
 }
 
 .project-image {
-    width: min(360px, 45%);
+    width: max(400px, 45%);
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -91,6 +113,7 @@ nav .menu a.active {
     transform: translateY(0);
 }
 
+.click-github,
 .copy-email {
     margin-top: 10px;
     padding: 10px 18px;
@@ -100,11 +123,13 @@ nav .menu a.active {
     color: black;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.click-github:hover,
 .copy-email:hover {
-    transform: translateY(-1px);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer {
@@ -115,4 +140,11 @@ footer {
     color: black;
     padding: 15px 0;
     width: 100%;
+}
+
+@media (max-width: 600px) {
+    nav .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }

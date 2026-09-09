@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
     const yearElement = document.getElementById('year');
     const copyButton = document.getElementById('copy-email');
+    const githubButton = document.getElementById('click-github');
 
     const setActiveLink = (sectionId) => {
         menuLinks.forEach((link) => {
@@ -50,18 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyButton) {
         const email = 'gabrielsa.tech@gmail.com';
 
-        copyButton.addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(email);
-                copyButton.textContent = 'E-mail copiado!';
-            } catch (error) {
-                copyButton.textContent = 'Não foi possível copiar';
-                console.error('Erro ao copiar e-mail:', error);
-            }
+        copyButton.addEventListener('click', () => {
+            const subject = encodeURIComponent('Contato pelo site');
+            const body = encodeURIComponent('Olá Gabriel,\n\nGostaria de entrar em contato sobre...');
+            const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
-            setTimeout(() => {
-                copyButton.textContent = 'Copiar e-mail';
-            }, 1500);
+            window.location.href = mailtoLink;
+        });
+    }
+
+    if (githubButton) {
+        githubButton.addEventListener('click', () => {
+            window.open('https://github.com/EngSoftGabriel', '_blank');
         });
     }
 });
