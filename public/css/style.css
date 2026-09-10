@@ -102,10 +102,15 @@ nav .menu a:active {
 }
 
 .project-image {
-    width: max(400px, 45%);
+    width: max(600px, 60%);
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .reveal.is-visible {
