@@ -125,6 +125,69 @@ nav .menu a:active {
     margin-bottom: 0px;
 }   
 
+.eyebrow {
+    margin-bottom: 0;
+    color: rgb(184, 134, 11);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.professional-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 10px;
+    border-top: 3px solid rgb(184, 134, 11);
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.highlight-item strong {
+    font-size: 0.95rem;
+}
+
+.highlight-item span {
+    font-size: 0.85rem;
+}
+
+.project-description {
+    max-width: 600px;
+    margin-top: 12px;
+}
+
+.project-description h3 {
+    margin: 0 0 8px;
+}
+
+.project-item + .project-item {
+    margin-top: 20px;
+}
+
+.project-description p {
+    margin: 0;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6f5000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    color: #2f2400;
+}
+
 .quarto-container {
     margin-bottom: 25px;
 }
@@ -301,5 +364,9 @@ footer {
     .project-carousel {
         padding-right: 42px;
         padding-left: 42px;
+    }
+
+    .professional-highlights {
+        grid-template-columns: 1fr;
     }
 }
