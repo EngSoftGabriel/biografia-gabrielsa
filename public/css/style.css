@@ -91,26 +91,97 @@ nav .menu a:active {
     margin-bottom: 25px;
 }
 
-.project-gallery {
+.project-carousel {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     width: 100%;
     margin-top: 20px;
-    
+    padding: 0 52px 34px;
+    box-sizing: border-box;
+}
+
+.project-gallery {
+    position: relative;
+    width: min(600px, 100%);
+    aspect-ratio: 2.16 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #101010;
 }
 
 .project-image {
-    width: max(600px, 60%);
-    height: auto;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
 }
 
-.project-image:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+.project-image.is-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgb(184, 134, 11);
+    color: black;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-button:hover,
+.carousel-button:focus-visible {
+    background-color: #d9a514;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-previous {
+    left: 4px;
+}
+
+.carousel-next {
+    right: 4px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.carousel-dot.is-active,
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+    background-color: rgb(184, 134, 11);
 }
 
 .reveal.is-visible {
@@ -118,17 +189,53 @@ nav .menu a:active {
     transform: translateY(0);
 }
 
-.click-github,
+.click-github {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(192, 191, 189);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 .copy-email {
     margin-top: 10px;
     padding: 10px 18px;
     border: none;
     border-radius: 8px;
-    background-color: rgb(184, 134, 11);
+    background-color: rgb(243, 52, 52);
     color: black;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.click-github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.copy-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.github-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.email-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
 }
 
 .click-github:hover,
@@ -151,5 +258,10 @@ footer {
     nav .menu {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .project-carousel {
+        padding-right: 42px;
+        padding-left: 42px;
     }
 }

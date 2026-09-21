@@ -20,7 +20,7 @@
 
     <main class="conteudo-principal">
         <section id="home" class="primeiro-container reveal">
-            <h1>Precisamos estar a frente do nosso tempo</h1>
+            <h1>SEJAM BEM-VINDOS!!!</h1>
             <p>Tecnologias são criadas todos os dias, vivemos num mundo em constante evolução, e ficar para no tempo não é melhor das opções.
                 No entanto, existem problemas que continuam os mesmos, e nós, como desenvolvedores, precisamos estar a frente do nosso tempo para resolver esses problemas de forma eficiente e inovadora.  
             </p>
@@ -37,15 +37,28 @@
         </section>
 
         <section id="projects" class="terceiro-container reveal">
-            <h2>Projetos</h2>
-            <p>Aqui estão alguns dos meus projetos recentes:</p>
+            <h2>Repositório</h2>
+            <p>Aqui estão meus projetos disponíveis no GitHub</p>
             <a href="https://github.com/EngSoftGabriel" target="_blank">
-                <button type="button" id="click-github" class="click-github">GitHub</button>
+                <button type="button" id="click-github" class="click-github">
+                    <img src="./assets/img/github.png" alt="" class="github-icon">
+                    <span>GitHub</span>
+                </button>
             </a>
 
-            <div class="project-gallery">
-                <img src="./assets/img/controle-encomendas.png" alt="Controle de Encomendas" class="project-image">
-                <img src="./assets/img/finansu.png" alt="Finansu" class="project-image">
+            <div class="project-carousel" aria-label="Carrossel de projetos">
+                <button type="button" class="carousel-button carousel-previous" aria-label="Imagem anterior">&#10094;</button>
+                <div class="project-gallery">
+                    <img src="./assets/img/controle-encomendas.png" alt="Controle de Encomendas" class="project-image is-active">
+                    <img src="./assets/img/finansu.png" alt="Finansu" class="project-image">
+                    <img src="./assets/img/arts.png" alt="Portfólio" class="project-image">
+                </div>
+                <button type="button" class="carousel-button carousel-next" aria-label="Próxima imagem">&#10095;</button>
+                <div class="carousel-dots" aria-label="Selecionar projeto">
+                    <button type="button" class="carousel-dot is-active" aria-label="Ver Controle de Encomendas" aria-current="true"></button>
+                    <button type="button" class="carousel-dot" aria-label="Ver Finansu"></button>
+                    <button type="button" class="carousel-dot" aria-label="Ver Portfólio"></button>
+                </div>
             </div>
         </section>
 
@@ -53,7 +66,10 @@
             <h2>Contato</h2>
             <p>Se você quiser conversar sobre tecnologia, projetos, colaborações ou oportunidades, estou aberto ao
                 diálogo.</p>
-            <button type="button" id="copy-email" class="copy-email">Enviar e-mail</button>
+            <button type="button" id="copy-email" class="copy-email">
+                <img src="./assets/img/email.png" alt="" class="email-icon">
+                <span>Enviar e-mail</span>
+            </button>
         </section>
     </main>
 
